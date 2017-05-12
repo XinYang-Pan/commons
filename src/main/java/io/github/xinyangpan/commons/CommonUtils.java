@@ -1,9 +1,26 @@
 package io.github.xinyangpan.commons;
 
+import java.lang.reflect.Type;
+
+import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
+import com.google.common.reflect.TypeToken;
 
-public class CommonUtils implements StringUtils {
+public class CommonUtils {
 
+	/* Sample
+	@SuppressWarnings("serial")
+	private final Class<T> parameterizedClass = BlueoUtils.getParameterizedClass(new TypeToken<T>(this.getClass()) {});
+	*/
+	@SuppressWarnings({ "unchecked"})
+	public static <T> Class<T> getParameterizedClass(TypeToken<T> typeToken) {
+		Type type = typeToken.getType();
+		//
+		Preconditions.checkArgument(type instanceof Class<?>);
+		Class<T> clazz = (Class<T>) type;
+		return clazz;
+	}
+	
 	// this supports nested beginChar and endChar, will use most outer beginChar and endChar
 	public static ContentPiece splitContent(String string, char beginChar, char endChar) {
 		if (Strings.isNullOrEmpty(string)) {
