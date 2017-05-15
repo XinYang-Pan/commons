@@ -113,13 +113,6 @@
 				<version>${spring.version}</version>
 			</dependency>
 
-			<!-- test will use -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-test</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-
 			<!-- test -->
 			<dependency>
 				<groupId>junit</groupId>
