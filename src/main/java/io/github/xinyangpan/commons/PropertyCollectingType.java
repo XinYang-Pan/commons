@@ -11,7 +11,7 @@ import com.google.common.collect.Lists;
 
 public enum PropertyCollectingType {
 
-	DECLARED_FIELD() {
+	DECLARED_FIELD {
 		public List<PropertyDescriptor> getPropertyDescriptors(Class<?> targetClass) {
 			try {
 				List<PropertyDescriptor> list = Lists.newArrayList();
