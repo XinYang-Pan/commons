@@ -1,4 +1,4 @@
-package io.github.xinyangpan.commons;
+	package io.github.xinyangpan.commons;
 
 import java.lang.reflect.Type;
 
